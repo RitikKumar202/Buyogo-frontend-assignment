@@ -1,27 +1,42 @@
-# BuyogoTask
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+# User Authentication Web Application
 
-## Development server
+## Overview
+This Angular web application provides a user authentication system, allowing users to sign in or log in based on their email address or phone number. The application features a multi-step signup process with data validation and persistence across steps, as well as a login flow with mock data validation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **User Validation:** Determines if a user exists based on their email/phone and displays the appropriate login or signup screen.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Login:** Users can log in with their email/phone and password. The application validates the credentials and displays a success or failure message.
 
-## Build
+- **Signup:** A multi-step signup process where users enter their details, with inline validation for fields like organization ID, pincode, and email/phone.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Data Persistence:** Form data persists when navigating between steps in the signup process.
+## Setup Instructions
 
-## Running unit tests
+### Prerequisites
+- Node.js: Ensure you have Node.js installed.
+- Angular CLI: Install Angular CLI globally.
+```bash
+  npm install -g @angular/cli
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the Repository:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+  git clone https://github.com/RitikKumar202/buyogo-frontend-assignment.git
+  cd buyogo-frontend-assignment
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Install Dependencies:
+```bash
+  npm install
+```
+3. Run the Application:
+```bash
+  ng serve
+```
+Open http://localhost:4200/ in your web browser to access the application.
