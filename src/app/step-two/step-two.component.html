@@ -1,0 +1,63 @@
+<form [formGroup]="stepTwoForm">
+    <div class="form-group">
+        <label for="organisation-name">Organisation Name</label>
+        <input type="text" formControlName="orgName" placeholder="Organisation Name">
+        <div class="error" *ngIf="stepTwoForm.get('orgName')?.invalid && stepTwoForm.get('orgName')?.touched">
+            Organisation Name is
+            required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="organisation-id">Organisation ID</label>
+        <input type="text" formControlName="orgId" placeholder="Organisation ID">
+        <div class="error" *ngIf="stepTwoForm.get('orgId')?.invalid && stepTwoForm.get('orgId')?.touched">
+            <div *ngIf="stepTwoForm.get('orgId')?.hasError('required')">Organisation ID is required</div>
+            <div *ngIf="stepTwoForm.get('orgId')?.hasError('unknownOrgId')">Unknown organization-id</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="designation">Designation</label>
+        <select formControlName="designation">
+            <option value="">Select Designation</option>
+            <option value="Manager">Manager</option>
+            <option value="Developer">Developer</option>
+            <option value="Analyst">Analyst</option>
+            <option value="Tester">Tester</option>
+        </select>
+        <div class="error" *ngIf="stepTwoForm.get('designation')?.invalid && stepTwoForm.get('designation')?.touched">
+            Designation is required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="birth-date">Birth Date</label>
+        <input type="date" formControlName="birthDate" placeholder="Birth Date">
+        <div class="error" *ngIf="stepTwoForm.get('birthDate')?.invalid && stepTwoForm.get('birthDate')?.touched">Birth
+            Date is
+            required
+        </div>
+    </div>
+
+    <div class="form-address">
+        <div class="form-add">
+            <label for="city">City</label>
+            <input type="text" formControlName="city" placeholder="City">
+            <div class="error" *ngIf="stepTwoForm.get('city')?.invalid && stepTwoForm.get('city')?.touched">City is
+                required</div>
+        </div>
+
+        <div class="form-add">
+            <label for="pincode">Pincode</label>
+            <input type="text" formControlName="pincode" placeholder="Pincode" maxlength="6"
+                (keypress)="validatePincodeInput($event)">
+            <div class="error" *ngIf="stepTwoForm.get('pincode')?.invalid && stepTwoForm.get('pincode')?.touched">
+                <div *ngIf="stepTwoForm.get('pincode')?.hasError('required')">Pincode is required</div>
+                <div *ngIf="stepTwoForm.get('pincode')?.hasError('pattern')">Enter a valid 6-digit pincode</div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" (click)="onNext()">Next</button>
+</form>

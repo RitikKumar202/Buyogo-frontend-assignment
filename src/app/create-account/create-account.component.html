@@ -1,0 +1,27 @@
+<div class="create-acc-container">
+    <button *ngIf="currentStep === 2" class="go-back-button" (click)="previousStep()">
+        <img src="assets/back.png" alt="back" class="back-icon">
+        <p>Go Back</p>
+    </button>
+
+    <h2 *ngIf="currentStep <= 2">Create Account</h2>
+
+    <!-- Progress Bar -->
+    <div *ngIf="currentStep <= 2" class="progress-bar">
+        <div [class.progress]="currentStep >= 1" class="progress-line"></div>
+        <div [class.progress]="currentStep >= 2" class="progress-line"></div>
+    </div>
+
+    <div *ngIf="currentStep === 1">
+        <app-step-one [emailOrPhone]="emailOrPhone" [formData]="stepOneData"
+            (next)="handleStepOneData($event); nextStep()"></app-step-one>
+    </div>
+    <div *ngIf="currentStep === 2">
+        <app-step-two [initialData]="stepTwoData" (next)="handleStepTwoData($event); nextStep()"
+            (previous)="previousStep()"></app-step-two>
+    </div>
+</div>
+
+<div *ngIf="currentStep === 3">
+    <app-step-three (previous)="previousStep()"></app-step-three>
+</div>
