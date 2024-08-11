@@ -5,10 +5,10 @@ import {Component, EventEmitter, Output} from '@angular/core';
   selector: 'app-step-three',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './step-three.component.html',
-  styleUrls: ['./step-three.component.css']
+  templateUrl: './registration-success.component.html',
+  styleUrls: ['./registration-success.component.css']
 })
-export class StepThreeComponent {
+export class RegistrationSuccessComponent {
   @Output() previous = new EventEmitter<void>();
 
   onPrevious() {

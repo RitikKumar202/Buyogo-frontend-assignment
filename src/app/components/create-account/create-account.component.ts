@@ -1,15 +1,18 @@
 import {CommonModule} from '@angular/common';
 import {Component} from '@angular/core';
-import {AuthService} from '../services/auth.service';
+
+import {AuthService} from '../../services/auth.service';
+import {RegistrationSuccessComponent} from '../registration-success/registration-success.component';
 import {StepOneComponent} from '../step-one/step-one.component';
-import {StepThreeComponent} from '../step-three/step-three.component';
 import {StepTwoComponent} from '../step-two/step-two.component';
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports:
-      [CommonModule, StepOneComponent, StepTwoComponent, StepThreeComponent],
+  imports: [
+    CommonModule, StepOneComponent, StepTwoComponent,
+    RegistrationSuccessComponent
+  ],
   templateUrl: './create-account.component.html',
   styleUrls: ['./create-account.component.css']
 })

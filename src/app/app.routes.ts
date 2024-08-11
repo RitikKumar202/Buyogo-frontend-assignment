@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
-import {CreateAccountComponent} from './create-account/create-account.component';
-import {LoginComponent} from './login/login.component';
-import {WelcomeComponent} from './welcome/welcome.component';
+import {CreateAccountComponent} from './components/create-account/create-account.component';
+import {LoginComponent} from './components/login/login.component';
+import {WelcomeComponent} from './components/welcome/welcome.component';
 
 export const routes: Routes = [
   {path: '', component: WelcomeComponent},
